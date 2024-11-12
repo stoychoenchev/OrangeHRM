@@ -8,7 +8,13 @@ exports.LoginPage = class LoginPage {
         this.login_button = page.locator('button:has-text("Login")')
     }
 
-    
+    async login(){
+        await this.navigateToPage();
+        await this.enterUsername();
+        await this.enterPassword();
+        await this.clickLoginButton();
+    }
+
     async enterUsername() {
 
         await this.username_textbox.fill('Admin');
