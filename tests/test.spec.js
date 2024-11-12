@@ -5,13 +5,31 @@ const { HomePage } = require('../pages/HomePage');
 
 test.beforeEach(async ({ page }) => {
     const login = new LoginPage(page)
+    await login.navigateToPage();
+   // await page.waitForTimeout(5000); //Wait for all elements to load.
+   //  await expect(login.login_button, "Check if login button is visible").toBeVisible({ timeout: 5000 });
+    await expect(page).toHaveTitle('OrangeHRM');
     await login.login();
-    await expect(page).toHaveTitle('OrangeHRM')
+})
+
+test('Verify that the profile picture is visible', async ({ page }) => {
+    const home = new HomePage(page)
+    await expect(home.profilePicture, "Check the visibility of the profile picture").toBeVisible();
+})
+
+test('Verify that the upgrade button is visible', async ({ page }) => {
+    const home = new HomePage(page)
+    await expect(home.upgradeButton, "Check the visibility of the upgrade button").toBeVisible();
+})
+
+test('Verify that the hide navigation button is visible', async ({ page }) => {
+    const home = new HomePage(page)
+    await expect(home.hideNavigationButton, "Check the visibility of the "<" hide navigation button").toBeVisible();
 })
 
 test('Verify that the admin button is visible', async ({ page }) => {
-    const admin = new AdminPage(page)
-    await expect(admin.adminButton, "Check the visibility of the admin button").toBeVisible();
+    const home = new HomePage(page)
+    await expect(home.adminButton, "Check the visibility of the admin button").toBeVisible();
 })
 
 test('Verify that the pim button is visible', async ({ page }) => {
@@ -76,4 +94,30 @@ test('Nav to Admin Page and Create New User', async ({ page }) => {
     await expect(successMessage).toBeVisible({ timeout: 100000});
 })
 
+test('Verify url after clicking on the Upgrade link in HomePage', async ({ page }) => {
+    const home = new HomePage(page)
+    await home.clickAndVerifyThatWeAreNavigatedToTheUpgradePage();
+    
+
+})
+
+test('LogOut', async ({ page }) => {
+    const home = new HomePage(page)
+    await home.logout();
+    await expect(page.getByRole('img', { name: 'company-branding' })).toBeVisible();
+    
+})
+
+test('Click Support Menu Item', async ({ page }) => {
+    const home = new HomePage(page)
+    await home.clickSupportItem();
+    await expect(page.locator('#app')).toContainText('Getting Started with OrangeHRM');
+    
+})
+test('Search for employee', async ({ page }) => {
+    const home = new HomePage(page)
+    await home.searchForEmployee();
+    await expect(page.getByText('Successfully Updated')).toBeVisible();
+
+})
 
