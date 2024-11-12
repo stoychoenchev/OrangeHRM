@@ -20,10 +20,4 @@ test('Nav to Admin Page and Create New User', async ({ page }) => {
     const successMessage = page.getByText('Success', { exact: true }); // Example success message locator
     await expect(successMessage).toBeVisible({ timeout: 100000});
 
-    
-    
-   
 })
-
-
-
