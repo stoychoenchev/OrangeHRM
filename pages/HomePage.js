@@ -25,7 +25,14 @@ exports.HomePage = class HomePage {
         this.employeeNameFilled = page.getByRole('option').first();
         this.searchButton = page.getByRole('button', { name: 'Search' });
         this.editButton = page.locator("//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' bi-pencil-fill ')]");
-
+        this.addInRecruitmentButton = page.getByRole('button', { name: ' Add' });
+        this.firstNameField = page.getByPlaceholder('First Name');
+        this.middleNameField = page.getByPlaceholder('Middle Name');
+        this.lastNameField = page.getByPlaceholder('Last Name');
+        this.vacancyDropDown = page.locator('form i').first();
+        this.seniorQaOption = page.getByText('Senior QA Lead');
+        this.emailField = page.getByPlaceholder('Type here').first()
+        this.saveButton = page.getByRole('button', { name: 'Save' });
     }
 
 
@@ -55,9 +62,20 @@ exports.HomePage = class HomePage {
         await this.searchButton.click();
         await this.editButton.click();
         await this.page.getByPlaceholder('First Name').click();
-        await this.page.getByPlaceholder('First Name').fill('AaaTestUpdatePlay1211');
-        await this.page.locator('form').filter({ hasText: 'Employee Full NameEmployee' }).getByRole('button').click();
+        await this.page.getByPlaceholder('First Name').fill('AaaTestUpdatePlay1411');
+        await this.page.locator('form').filter({ hasText: 'Employee Full NameNicknameEmployee IdOther IdDriver\'s License NumberLicense Expi' }).getByRole('button', { name: 'Save' }).click();
+    }
 
+    async addRecruitment(){
+        await this.recruitmentButton.click();
+        await this.addInRecruitmentButton.click();
+        await this.firstNameField.fill('Stoycho');
+        await this.middleNameField.fill('Tarkanaev');
+        await this.lastNameField.fill('Tainov');
+        await this.vacancyDropDown.click();
+        await this.seniorQaOption.click();
+        await this.emailField.fill('abekvomepitash@abv.bg');
+        await this.saveButton.click();
 
     }
 
