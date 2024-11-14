@@ -33,6 +33,9 @@ exports.HomePage = class HomePage {
         this.seniorQaOption = page.getByText('Senior QA Lead');
         this.emailField = page.getByPlaceholder('Type here').first()
         this.saveButton = page.getByRole('button', { name: 'Save' });
+        this.buzzTextField = page.getByPlaceholder('What\'s on your mind?');
+        this.postButton = page.getByRole('button', { name: 'Post', exact: true });
+
     }
 
 
@@ -62,8 +65,8 @@ exports.HomePage = class HomePage {
         await this.searchButton.click();
         await this.editButton.click();
         await this.page.getByPlaceholder('First Name').click();
-        await this.page.getByPlaceholder('First Name').fill('AaaTestUpdatePlay1411');
-        await this.page.locator('form').filter({ hasText: 'Employee Full NameNicknameEmployee IdOther IdDriver\'s License NumberLicense Expi' }).getByRole('button', { name: 'Save' }).click();
+        await this.page.getByPlaceholder('First Name').fill('AaaTestUpdatePlay531');
+        await this.page.locator("//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' oxd-button--secondary ') and (position() = 2)]").click({ timeout: 5000});
     }
 
     async addRecruitment(){
@@ -76,6 +79,14 @@ exports.HomePage = class HomePage {
         await this.seniorQaOption.click();
         await this.emailField.fill('abekvomepitash@abv.bg');
         await this.saveButton.click();
+
+    }
+
+    async postInBlog(){
+        await this.buzzButton.click();
+        await this.buzzTextField.fill('Emi testvam si.');
+        await this.postButton.click();
+        
 
     }
 

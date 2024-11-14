@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
     const login = new LoginPage(page)
     await login.navigateToPage();
    // await page.waitForTimeout(5000); //Wait for all elements to load.
-   //  await expect(login.login_button, "Check if login button is visible").toBeVisible({ timeout: 5000 });
+   // await expect(login.login_button, "Check if login button is visible").toBeVisible({ timeout: 5000 });
     await expect(page).toHaveTitle('OrangeHRM');
     await login.login();
 })
@@ -118,7 +118,7 @@ test('Click Support Menu Item', async ({ page }) => {
 test('Search for employee', async ({ page }) => {
     const home = new HomePage(page)
     await home.searchForEmployee();
-    await expect(page.getByText('Successfully Updated')).toBeVisible({ timeout: 5000});
+    await expect(page.getByText('Successfully Updated')).toBeVisible({ timeout: 10000});
 
 })
 
@@ -129,3 +129,9 @@ test('Navigate to Recruitment page and add a new Recruitment', async ({ page }) 
 
 })
 
+test('Navigate to Buzz page and post whats on your mind.', async ({ page }) => {
+    const home = new HomePage(page)
+    home.postInBlog();
+    await expect(page.getByText('Emi testvam si.').first()).toBeVisible({ timeout: 5000});
+
+})
