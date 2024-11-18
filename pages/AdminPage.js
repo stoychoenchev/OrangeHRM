@@ -1,7 +1,5 @@
 exports.AdminPage = class AdminPage {
-
     constructor(page) {
-
         this.page = page
         this.adminButton = page.getByRole('link', { name: 'Admin' });
         this.addButton = page.getByRole('button', { name: ' Add' });
@@ -14,14 +12,15 @@ exports.AdminPage = class AdminPage {
         this.usernameBox = page.getByRole('textbox').nth(2);
         this.passwordBox = page.getByRole('textbox').nth(3);
         this.passwordBoxRepat = page.getByRole('textbox').nth(4);
-        this.saveButton = page.getByRole('button', { name: 'Save' })
-
+        this.saveButton = page.getByRole('button', { name: 'Save' });
+        this.adminPageText = page.getByRole('heading', { name: '/ User Management' });
     }
-
-    async navigateToAdminPageAndAddUser() {
+    async navigateToAdminPage() {
+        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');
+        await this.page.waitForLoadState('load');
+    }
+    async adminPageAddUser() {
         const uniqueUsername = `user_${Date.now()}`; // Creates a unique username for each test run
-
-        await this.adminButton.click();
         await this.addButton.click();
         await this.formI.click();
         await this.formIOption.click();
@@ -34,12 +33,5 @@ exports.AdminPage = class AdminPage {
         await this.passwordBox.fill('parola123');
         await this.passwordBoxRepat.fill('parola123');
         await this.saveButton.click();
-
-
     }
-
-
-
-
-
 }

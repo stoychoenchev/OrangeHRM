@@ -1,7 +1,5 @@
 exports.HomePage = class HomePage {
-
     constructor(page) {
-
         this.page = page
         this.adminButton = page.getByRole('link', { name: 'Admin' });
         this.pimButton = page.getByRole('link', { name: 'PIM' });
@@ -35,27 +33,18 @@ exports.HomePage = class HomePage {
         this.saveButton = page.getByRole('button', { name: 'Save' });
         this.buzzTextField = page.getByPlaceholder('What\'s on your mind?');
         this.postButton = page.getByRole('button', { name: 'Post', exact: true });
-
     }
-
-
-    async clickAndVerifyThatWeAreNavigatedToTheUpgradePage() {
-        
+    async clickAndVerifyThatWeAreNavigatedToTheUpgradePage() {  
         await this.upgradeButton.click({ force: true });
-        
     }
-    
     async logout(){
         await this.profilePicture.click();
-        await this.logOutButton.click();
-        
+        await this.logOutButton.click(); 
     }
-
     async clickSupportItem(){
         await this.profilePicture.click();
         await this.supportButton.click();
     }
-
     async searchForEmployee(){
         await this.pimButton.click();
         await this.employeeName.first().click();
@@ -68,7 +57,6 @@ exports.HomePage = class HomePage {
         await this.page.getByPlaceholder('First Name').fill('AaaTestUpdatePlay531');
         await this.page.locator("//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' oxd-button--secondary ') and (position() = 2)]").click({ timeout: 5000});
     }
-
     async addRecruitment(){
         await this.recruitmentButton.click();
         await this.addInRecruitmentButton.click();
@@ -79,15 +67,10 @@ exports.HomePage = class HomePage {
         await this.seniorQaOption.click();
         await this.emailField.fill('abekvomepitash@abv.bg');
         await this.saveButton.click();
-
     }
-
     async postInBlog(){
         await this.buzzButton.click();
         await this.buzzTextField.fill('Emi testvam si.');
         await this.postButton.click();
-        
-
     }
-
 }
