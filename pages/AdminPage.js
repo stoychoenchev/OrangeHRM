@@ -46,9 +46,9 @@ exports.AdminPage = class AdminPage {
         this.configurationButtonListedItem6 = this.page.getByRole('menuitem', { name: 'Social Media Authentication' });
         this.configurationButtonListedItem7 = this.page.getByRole('menuitem', { name: 'Register OAuth Client' });
         this.configurationButtonListedItem8 = this.page.getByRole('menuitem', { name: 'LDAP Configuration' });
-
-
-
+        this.containerLocator = '.orangehrm-container >> role=row';
+        this.rowsArray = null;
+        this.recordsFoundText = null;
     }
     async navigateToAdminPage() {
         await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');
@@ -74,5 +74,22 @@ exports.AdminPage = class AdminPage {
         await this.userRoleAdmin.click();
         await this.searchButton.click();
     }
-  
-}
+    async initializeLocators() {
+        await this.page.waitForSelector(this.containerLocator);
+        this.rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        this.recordsFoundText = await this.page.locator('xpath=//*[@class and contains(concat(" ", normalize-space(@class), " "), " oxd-text--span ") and (position() = 1)]').textContent();
+        }
+    async getRecordsAndCompareNumber(){
+        await this.navigateToAdminPage();
+        await this.initializeLocators();
+        console.log('Rows:', this.rowsArray);
+        const itemCount = this.rowsArray.length - 1; // No need to sort if sorting is not required
+        console.log('Item Count:', itemCount);
+        console.log('Records Found Text:', this.recordsFoundText);
+        const recordsFoundCount = parseInt(this.recordsFoundText.match(/\d+/)[0], 10);
+        console.log('Records Found Count:', recordsFoundCount);
+        if (itemCount === recordsFoundCount) {
+        console.log('The counts match!');
+        } else {
+        console.log(`Mismatch: Found ${itemCount} items, but records indicate ${recordsFoundCount}`);
+    }}}

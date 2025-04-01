@@ -511,3 +511,8 @@ test('Verify that the Configuration list item 8 is clickable in AdminPage', asyn
     await admin.configurationButton.click();
     await expect(admin.configurationButtonListedItem8).toBeEnabled();
 })
+test('Get all records and their counts and compare with the number in () Records Found', async ({ page }) => {
+    const admin = new AdminPage(page)
+    await admin.navigateToAdminPage();
+    await admin.getRecordsAndCompareNumber();
+})
