@@ -70,7 +70,7 @@ exports.HomePage = class HomePage {
     }
     async postInBlog(){
         await this.buzzButton.click();
-        await this.buzzTextField.fill('Emi testvam si.');
+        await this.buzzTextField.fill('Testvam');
         await this.postButton.click();
     }
 }
