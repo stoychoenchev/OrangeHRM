@@ -3,6 +3,8 @@ const { LoginPage } = require ('../pages/LoginPage');
 const { AdminPage } = require('../pages/AdminPage');
 const { HomePage } = require('../pages/HomePage');
 const { RecruitPage } = require('../pages/RecruitPage');
+const { PimPage } = require('../pages/PimPage');
+
 test.beforeEach(async ({ page }) => {
     const login = new LoginPage(page)
     await login.navigateToPage();
@@ -515,4 +517,20 @@ test('Get all records and their counts and compare with the number in () Records
     const admin = new AdminPage(page)
     await admin.navigateToAdminPage();
     await admin.getRecordsAndCompareNumber();
+})
+
+test('Verify that we are navigated to pim page and successfully adding an employee', async ({ page }) => {
+    const pim = new PimPage(page)
+    await pim.navigateToPimPage();
+    await expect(pim.pimTextAssertion).toHaveText("PIM");
+    await pim.PimPageAddEmployee();
+    const successMessage = page.getByText('Success', { exact: true }); // Example success message locator
+    await expect(successMessage).toBeVisible({ timeout: 100000});
+})
+
+test('Verify that the search functionality in PimPage is working as expected', async ({ page }) => {
+    const pim = new PimPage(page)
+    const assertionOfSearch = await pim.searchForUserRole();
+    await expect(assertionOfSearch).toHaveText("Test Testov");
+   await page.pause();
 })
