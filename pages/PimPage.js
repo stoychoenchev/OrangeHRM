@@ -22,16 +22,16 @@ exports.PimPage = class PimPage {
     async PimPageAddEmployee() {
         const uniqueId = `ID${Date.now().toString().slice(-5)}`; // Creates a unique username for each test run
        await this.pimAddbutton.click();
-       await this.pimFirstNameField.fill("Test");
-       await this.pimMiddleNameField.fill("Testov");
-       await this.pimLastNameField.fill("Testov");
+       await this.pimFirstNameField.fill("Koko");
+       await this.pimMiddleNameField.fill("Koko");
+       await this.pimLastNameField.fill("Koko");
        await this.employeeId.fill(uniqueId);
        await this.pimSaveButton.click();
     }
 
     async searchForUserRole(){
        await this.navigateToPimPage();
-       await this.employeeNameField.fill("Test Testov");
+       await this.employeeNameField.fill("Koko Koko");
        await this.searchButton.click();
        return this.matchedName;
     }
