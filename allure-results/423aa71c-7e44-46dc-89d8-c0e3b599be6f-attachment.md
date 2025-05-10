@@ -1,0 +1,144 @@
+# Test info
+
+- Name: Verify that the hide navigation button is visible
+- Location: D:\Automation\OrangeHRM\tests\test.spec.js:24:1
+
+# Error details
+
+```
+Error: browserContext._wrapApiCall: Test ended.
+Browser logs:
+
+<launching> C:\Users\User\AppData\Local\ms-playwright\chromium_headless_shell-1169\chrome-win\headless_shell.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DeferRendererTasksAfterInput,DestroyProfileOnBrowserClose,DialMediaRouteProvider,ExtensionManifestV2Disabled,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=C:\Users\User\AppData\Local\Temp\playwright_chromiumdev_profile-ShgEA2 --remote-debugging-pipe --no-startup-window
+<launched> pid=27792
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect } = require('@playwright/test');
+   2 | const { LoginPage } = require ('../pages/LoginPage');
+   3 | const { AdminPage } = require('../pages/AdminPage');
+   4 | const { HomePage } = require('../pages/HomePage');
+   5 | const { RecruitPage } = require('../pages/RecruitPage');
+   6 | const { PimPage } = require('../pages/PimPage');
+   7 |
+   8 | test.beforeEach(async ({ page }) => {
+   9 |     const login = new LoginPage(page)
+   10 |     await login.navigateToPage();
+   11 |    // await page.waitForTimeout(5000); //Wait for all elements to load.
+   12 |    // await expect(login.login_button, "Check if login button is visible").toBeVisible({ timeout: 5000 });
+   13 |     await expect(page).toHaveTitle('OrangeHRM');
+   14 |     await login.login();
+   15 | })
+   16 | test('Verify that the profile picture is visible', async ({ page }) => {
+   17 |     const home = new HomePage(page)
+   18 |     await expect(home.profilePicture, "Check the visibility of the profile picture").toBeVisible();
+   19 | })
+   20 | test('Verify that the upgrade button is visible', async ({ page }) => {
+   21 |     const home = new HomePage(page)
+   22 |     await expect(home.upgradeButton, "Check the visibility of the upgrade button").toBeVisible();
+   23 | })
+>  24 | test('Verify that the hide navigation button is visible', async ({ page }) => {
+      | ^ Error: browserContext._wrapApiCall: Test ended.
+   25 |     const home = new HomePage(page)
+   26 |     await expect(home.hideNavigationButton, "Check the visibility of the hide navigation button").toBeVisible();
+   27 | })
+   28 | test('Verify that the hide navigation button is clickable', async ({ page }) => {
+   29 |     const home = new HomePage(page)
+   30 |     await expect(home.hideNavigationButton, "Verify that hide navigation button is clickable").toBeEnabled();
+   31 | })
+   32 | test('Verify that the admin button is visible', async ({ page }) => {
+   33 |     const home = new HomePage(page)
+   34 |     await expect(home.adminButton, "Check the visibility of the admin button").toBeVisible();
+   35 | })
+   36 | test('Verify that the admin button is clickable', async ({ page }) => {
+   37 |     const home = new HomePage(page)
+   38 |     await expect(home.adminButton, "Verify that the admin button is clickable").toBeEnabled();
+   39 | })
+   40 | test('Verify that the pim button is visible', async ({ page }) => {
+   41 |     const home = new HomePage(page)
+   42 |     await expect(home.pimButton, "Check the visibility of the pim button").toBeVisible();
+   43 | })
+   44 | test('Verify that the pim button is clickable', async ({ page }) => {
+   45 |     const home = new HomePage(page)
+   46 |     await expect(home.pimButton, "Verify that the pim button is clickable").toBeEnabled();
+   47 | })
+   48 | test('Verify that the leave button is visible', async ({ page }) => {
+   49 |     const home = new HomePage(page)
+   50 |     await expect(home.leaveButton, "Check the visibility of the leave button").toBeVisible();
+   51 | })
+   52 | test('Verify that the leave button is clickable', async ({ page }) => {
+   53 |     const home = new HomePage(page)
+   54 |     await expect(home.leaveButton, "Verify that the leave button is clickable").toBeEnabled();
+   55 | })
+   56 | test('Verify that the time button is visible', async ({ page }) => {
+   57 |     const home = new HomePage(page)
+   58 |     await expect(home.timeButton, "Check the visibility of the time button").toBeVisible();
+   59 | })
+   60 | test('Verify that the time button is clickable', async ({ page }) => {
+   61 |     const home = new HomePage(page)
+   62 |     await expect(home.timeButton, "Verify that the time button is clickable").toBeEnabled();
+   63 | })
+   64 | test('Verify that the recruitment button is visible', async ({ page }) => {
+   65 |     const home = new HomePage(page)
+   66 |     await expect(home.recruitmentButton, "Check the visibility of the recruitment button").toBeVisible();
+   67 | })
+   68 | test('Verify that the recruitment button is clickable', async ({ page }) => {
+   69 |     const home = new HomePage(page)
+   70 |     await expect(home.recruitmentButton, "Verify that the recruitment button is clickable").toBeEnabled();
+   71 | })
+   72 | test('Verify that the myInfo button is visible', async ({ page }) => {
+   73 |     const home = new HomePage(page)
+   74 |     await expect(home.myInfoButton, "Check the visibility of the myInfo button").toBeVisible();
+   75 | })
+   76 | test('Verify that the myInfo button is clickable', async ({ page }) => {
+   77 |     const home = new HomePage(page)
+   78 |     await expect(home.myInfoButton, "Verify that the myInfo button is clickable").toBeEnabled();
+   79 | })
+   80 | test('Verify that the performance button is visible', async ({ page }) => {
+   81 |     const home = new HomePage(page)
+   82 |     await expect(home.performanceButton, "Check the visibility of the performance button").toBeVisible();
+   83 | })
+   84 | test('Verify that the performance button is clickable', async ({ page }) => {
+   85 |     const home = new HomePage(page)
+   86 |     await expect(home.performanceButton, "Verify that the performance button is clickable").toBeEnabled();
+   87 | })
+   88 | test('Verify that the dashboard button is visible', async ({ page }) => {
+   89 |     const home = new HomePage(page)
+   90 |     await expect(home.dashboardButton, "Check the visibility of the dashBoard button").toBeVisible();
+   91 | })
+   92 | test('Verify that the dashboard button is clickable', async ({ page }) => {
+   93 |     const home = new HomePage(page)
+   94 |     await expect(home.dashboardButton, "Verify that the Dashboard button is clickable").toBeEnabled();
+   95 | })
+   96 | test('Verify that the directory button is visible', async ({ page }) => {
+   97 |     const home = new HomePage(page)
+   98 |     await expect(home.directoryButton, "Check the visibility of the directory button").toBeVisible();
+   99 | })
+  100 | test('Verify that the directory button is clickable', async ({ page }) => {
+  101 |     const home = new HomePage(page)
+  102 |     await expect(home.directoryButton, "Verify that the directory button is clickable").toBeEnabled();
+  103 | })
+  104 | test('Verify that the maintenance button is visible', async ({ page }) => {
+  105 |     const home = new HomePage(page)
+  106 |     await expect(home.maintenanceButton, "Check the visibility of the maintenance button").toBeVisible();
+  107 | })
+  108 | test('Verify that the maintenance button is clickable', async ({ page }) => {
+  109 |     const home = new HomePage(page)
+  110 |     await expect(home.maintenanceButton, "Verify that the maintenance button is clickable").toBeEnabled();
+  111 | })
+  112 | test('Verify that the claim button is visible', async ({ page }) => {
+  113 |     const home = new HomePage(page)
+  114 |     await expect(home.claimButton, "Check the visibility of the claim button").toBeVisible();
+  115 | })
+  116 | test('Verify that the claim button is clickable', async ({ page }) => {
+  117 |     const home = new HomePage(page)
+  118 |     await expect(home.claimButton, "Verify that the claim button is clickable").toBeEnabled();
+  119 | })
+  120 | test('Verify that the buzz button is visible', async ({ page }) => {
+  121 |     const home = new HomePage(page)
+  122 |     await expect(home.buzzButton, "Check the visibility of the buzz button").toBeVisible();
+  123 | })
+  124 | test('Verify that the buzz button is clickable', async ({ page }) => {
+```

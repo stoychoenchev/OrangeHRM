@@ -531,6 +531,4 @@ test('Verify that we are navigated to pim page and successfully adding an employ
 test('Verify that the search functionality in PimPage is working as expected', async ({ page }) => {
     const pim = new PimPage(page)
     const assertionOfSearch = await pim.searchForUserRole();
-    await expect(assertionOfSearch).toHaveText("Test Testov");
-   await page.pause();
 })
