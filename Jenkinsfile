@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'node-18'  // 👈 Make sure you have "node-18" set up in Jenkins Global Tools
+    nodejs 'node-18'  // Make sure you have "node-18" set up in Jenkins Global Tools
   }
 
   stages {
@@ -14,19 +14,19 @@ pipeline {
 
     stage('Install dependencies') {
       steps {
-        sh 'npm ci'
+        bat 'npm ci'  // Changed from 'sh' to 'bat' for Windows
       }
     }
 
     stage('Install Playwright Browsers') {
       steps {
-        sh 'npx playwright install --with-deps'
+        bat 'npx playwright install'  // Removed '--with-deps' as it's not needed for Windows
       }
     }
 
     stage('Run Tests') {
       steps {
-        sh 'npx playwright test'
+        bat 'npx playwright test'  // Changed from 'sh' to 'bat' for Windows
       }
     }
 
