@@ -1,0 +1,11 @@
+Rows: [
+  'UsernameAscendingDescendingUser RoleAscendingDescendingEmployee NameAscendingDescendingStatusAscendingDescendingActions',
+  'AdminAdminmanda userEnabled',
+  'fgerberAdminAaaTestUpdatePlay531 GerberEnabled',
+  'lmazzacaroESSLorena MazzacaroEnabled',
+  'user_1749313962676AdminAaaTestUpdatePlay531 GerberEnabled'
+]
+Item Count: 4
+Records Found Text:  (4) Records Found
+Records Found Count: 4
+The counts match!
