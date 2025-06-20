@@ -6,8 +6,6 @@ const { HomePage } = require('../pages/HomePage');
 test.beforeEach(async ({ page }) => {
     const login = new LoginPage(page)
     await login.navigateToPage();
-   // await page.waitForTimeout(5000); //Wait for all elements to load.
-   // await expect(login.login_button, "Check if login button is visible").toBeVisible({ timeout: 5000 });
     await expect(page).toHaveTitle('OrangeHRM');
     await login.login();
 })

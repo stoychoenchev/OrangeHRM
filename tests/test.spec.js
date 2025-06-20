@@ -128,6 +128,7 @@
 // test('Verify that we are navigated to Admin Page', async ({ page }) => {
 //     const admin = new AdminPage(page)
 //     await admin.navigateToAdminPage();
+//     await page.waitForLoadState('networkidle'); 
 //     await expect(admin.adminPageText).toBeVisible();
 // })
 // test('Verify that we are navigated to admin page and successfully adding new user.', async ({ page }) => {
