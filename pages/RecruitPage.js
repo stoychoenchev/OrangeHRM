@@ -12,8 +12,8 @@ exports.RecruitPage = class RecruitPage {
         this.saveButton = page.getByRole('button', { name: 'Save' });
     }
     async navigateToRecruitmentPage() {
-        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates');
-        await this.page.waitForLoadState('load');
+        await this.recruitmentButton.click();
+        await this.page.waitForLoadState('networkidle');
     }
     async addRecruitment(){
         await this.navigateToRecruitmentPage();
