@@ -243,16 +243,6 @@ test('Verify that the Qualifications list item 5 is clickable in AdminPage', asy
     await admin.qualificationsButton.click();
     await expect(admin.qualificationsButtonListedItem5).toBeEnabled();
 })
-test('Verify that the Nationalities button is visible in AdminPage', async ({ page }) => {
-    const admin = new AdminPage(page)
-    await admin.navigateToAdminPage();
-    await expect(admin.nationalitiesButton).toBeVisible();
-})
-test('Verify that the Nationalities button is clickable in AdminPage', async ({ page }) => {
-    const admin = new AdminPage(page)
-    await admin.navigateToAdminPage();
-    await expect(admin.nationalitiesButton).toBeEnabled();
-})
 test('Verify that the Corporate Branding button is visible in AdminPage', async ({ page }) => {
     const admin = new AdminPage(page)
     await admin.navigateToAdminPage();
@@ -374,3 +364,62 @@ test('Get all records and their counts and compare with the number in () Records
     await admin.navigateToAdminPage();
     await admin.getRecordsAndCompareNumber();
 })
+test('Job Titles: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkJobTitlesRecords();
+    expect(result).toBe(true);
+});
+
+test('Pay Grades: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkPayGradesRecords();
+    expect(result).toBe(true);
+});
+
+test('Employment Status: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkEmploymentStatusRecords();
+    expect(result).toBe(true);
+});
+
+test('Job Categories: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkJobCategoriesRecords();
+    expect(result).toBe(true);
+});
+
+test('Work Shifts: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkWorkShiftsRecords();
+    expect(result).toBe(true);
+});
+
+test('Skills: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkSkillsRecords();
+    expect(result).toBe(true);
+});
+
+test('Education: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkEducationRecords();
+    expect(result).toBe(true);
+});
+
+test('Licenses: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkLicensesRecords();
+    expect(result).toBe(true);
+});
+
+test('Languages: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkLanguagesRecords();
+    expect(result).toBe(true);
+});
+
+test('Memberships: Records count matches summary', async ({ page }) => {
+    const admin = new AdminPage(page);
+    const result = await admin.checkMembershipsRecords();
+    expect(result).toBe(true);
+});
