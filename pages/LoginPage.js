@@ -5,18 +5,9 @@ exports.LoginPage = class LoginPage {
         this.password_textbox = page.locator('//input[@name="password"]');
         this.login_button = page.getByRole('button', { name: 'Login' });
     }
-    async login(){
-        await this.enterUsername();
-        await this.enterPassword();
-        await this.clickLoginButton();
-    }
-    async enterUsername() {
-        await this.username_textbox.fill('Admin');
-    }
-    async enterPassword() {
-        await this.password_textbox.fill('admin123');
-    } 
-    async clickLoginButton() {
+    async login(username = 'Admin', password = 'admin123') {
+        await this.username_textbox.fill(username);
+        await this.password_textbox.fill(password);
         await this.login_button.click();
     }
     async navigateToPage() {
