@@ -1,0 +1,154 @@
+# Page snapshot
+
+```yaml
+- complementary:
+  - navigation "Sidepanel":
+    - link "client brand banner":
+      - /url: https://www.orangehrm.com/
+      - img "client brand banner"
+    - textbox "Search"
+    - button ""
+    - separator
+    - list:
+      - listitem:
+        - link "Admin":
+          - /url: /web/index.php/admin/viewAdminModule
+      - listitem:
+        - link "PIM":
+          - /url: /web/index.php/pim/viewPimModule
+      - listitem:
+        - link "Leave":
+          - /url: /web/index.php/leave/viewLeaveModule
+      - listitem:
+        - link "Time":
+          - /url: /web/index.php/time/viewTimeModule
+      - listitem:
+        - link "Recruitment":
+          - /url: /web/index.php/recruitment/viewRecruitmentModule
+      - listitem:
+        - link "My Info":
+          - /url: /web/index.php/pim/viewMyDetails
+      - listitem:
+        - link "Performance":
+          - /url: /web/index.php/performance/viewPerformanceModule
+      - listitem:
+        - link "Dashboard":
+          - /url: /web/index.php/dashboard/index
+      - listitem:
+        - link "Directory":
+          - /url: /web/index.php/directory/viewDirectory
+      - listitem:
+        - link "Maintenance":
+          - /url: /web/index.php/maintenance/viewMaintenanceModule
+      - listitem:
+        - link "Claim":
+          - /url: /web/index.php/claim/viewClaimModule
+          - img
+          - text: Claim
+      - listitem:
+        - link "Buzz":
+          - /url: /web/index.php/buzz/viewBuzz
+- banner:
+  - heading "Dashboard" [level=6]
+  - link "Upgrade":
+    - /url: https://orangehrm.com/open-source/upgrade-to-advanced
+    - button "Upgrade"
+  - list:
+    - listitem:
+      - img "profile picture"
+      - paragraph: m m
+      - text: 
+  - navigation "Topbar Menu":
+    - list:
+      - button ""
+- text: 
+- paragraph: Time at Work
+- separator
+- img "profile picture"
+- paragraph: Punched Out
+- paragraph: "Punched Out: Mar 29th at 01:19 PM (GMT 7)"
+- text: 0h 0m Today
+- button ""
+- separator
+- paragraph: This Week
+- paragraph: Jun 16 - Jun 22
+- text: 
+- paragraph: 0h 0m
+- text: 
+- paragraph: My Actions
+- separator
+- button
+- paragraph: (1) Pending Self Review
+- button
+- paragraph: (1) Candidate to Interview
+- text: 
+- paragraph: Quick Launch
+- separator
+- button "Assign Leave"
+- paragraph: Assign Leave
+- button "Leave List"
+- paragraph: Leave List
+- button "Timesheets"
+- paragraph: Timesheets
+- button "Apply Leave"
+- paragraph: Apply Leave
+- button "My Leave"
+- paragraph: My Leave
+- button "My Timesheet"
+- paragraph: My Timesheet
+- text: 
+- paragraph: Buzz Latest Posts
+- separator
+- img "profile picture"
+- paragraph: m m
+- paragraph: 2025-20-06 11:24 PM
+- separator
+- paragraph: Testvam
+- img "profile picture"
+- paragraph: m m
+- paragraph: 2025-20-06 11:23 PM
+- separator
+- paragraph: Testvam
+- img "profile picture"
+- paragraph: m m
+- paragraph: 2025-20-06 11:21 PM
+- separator
+- paragraph: Testvam
+- img "profile picture"
+- paragraph: m m
+- paragraph: 2025-20-06 11:03 PM
+- separator
+- paragraph: Testvam
+- img "profile picture"
+- paragraph: m m
+- paragraph: 2020-08-10 06:38 AM
+- separator
+- paragraph: "Hi All; Linda has been blessed with a baby boy! Linda: With love, we welcome your dear new baby to this world. Congratulations!"
+- paragraph: Employees on Leave Today
+- text: 
+- separator
+- img "No Content"
+- paragraph: No Employees are on Leave Today
+- text: 
+- paragraph: Employee Distribution by Sub Unit
+- separator
+- list:
+  - listitem: Engineering
+  - listitem: Human Resources
+  - listitem: Administration
+  - listitem: Client Services
+  - listitem: Unassigned
+- text: 
+- paragraph: Employee Distribution by Location
+- separator
+- list:
+  - listitem: Texas R&D
+  - listitem: New York Sales Office
+  - listitem: Unassigned
+- paragraph: OrangeHRM OS 5.7
+- paragraph:
+  - text: © 2005 - 2025
+  - link "OrangeHRM, Inc":
+    - /url: http://www.orangehrm.com
+  - text: . All rights reserved.
+```
