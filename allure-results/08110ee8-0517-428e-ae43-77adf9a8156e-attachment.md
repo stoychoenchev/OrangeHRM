@@ -1,0 +1,357 @@
+# Page snapshot
+
+```yaml
+- complementary:
+  - navigation "Sidepanel":
+    - link "client brand banner":
+      - /url: https://www.orangehrm.com/
+      - img "client brand banner"
+    - textbox "Search"
+    - button ""
+    - separator
+    - list:
+      - listitem:
+        - link "Admin":
+          - /url: /web/index.php/admin/viewAdminModule
+      - listitem:
+        - link "PIM":
+          - /url: /web/index.php/pim/viewPimModule
+      - listitem:
+        - link "Leave":
+          - /url: /web/index.php/leave/viewLeaveModule
+      - listitem:
+        - link "Time":
+          - /url: /web/index.php/time/viewTimeModule
+      - listitem:
+        - link "Recruitment":
+          - /url: /web/index.php/recruitment/viewRecruitmentModule
+      - listitem:
+        - link "My Info":
+          - /url: /web/index.php/pim/viewMyDetails
+      - listitem:
+        - link "Performance":
+          - /url: /web/index.php/performance/viewPerformanceModule
+      - listitem:
+        - link "Dashboard":
+          - /url: /web/index.php/dashboard/index
+      - listitem:
+        - link "Directory":
+          - /url: /web/index.php/directory/viewDirectory
+      - listitem:
+        - link "Maintenance":
+          - /url: /web/index.php/maintenance/viewMaintenanceModule
+      - listitem:
+        - link "Claim":
+          - /url: /web/index.php/claim/viewClaimModule
+          - img
+          - text: Claim
+      - listitem:
+        - link "Buzz":
+          - /url: /web/index.php/buzz/viewBuzz
+- banner:
+  - heading "Admin" [level=6]
+  - heading "/ Job" [level=6]
+  - link "Upgrade":
+    - /url: https://orangehrm.com/open-source/upgrade-to-advanced
+    - button "Upgrade"
+  - list:
+    - listitem:
+      - img "profile picture"
+      - paragraph: manda user
+      - text: 
+  - navigation "Topbar Menu":
+    - list:
+      - listitem: User Management 
+      - listitem: Job 
+      - listitem: Organization 
+      - listitem: Qualifications 
+      - listitem:
+        - link "Nationalities":
+          - /url: "#"
+      - listitem:
+        - link "Corporate Branding":
+          - /url: "#"
+      - listitem: Configuration 
+      - button ""
+- heading "Job Titles" [level=6]
+- button " Add"
+- separator
+- text: (29) Records Found
+- table:
+  - rowgroup:
+    - row " Job Titles  Job Description Actions":
+      - columnheader "":
+        - checkbox ""
+        - text: 
+      - columnheader "Job Titles "
+      - columnheader "Job Description"
+      - columnheader "Actions"
+  - rowgroup:
+    - row " Account Assistant  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Account Assistant"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Automation Tester  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Automation Tester"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Automaton Tester  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Automaton Tester"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Chief Executive Officer  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Chief Executive Officer"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Chief Financial Officer  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Chief Financial Officer"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Chief Technical Officer  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Chief Technical Officer"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Content Specialist  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Content Specialist"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Customer Success Manager  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Customer Success Manager"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Database Administrator  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Database Administrator"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Finance Manager  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Finance Manager"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Financial Analyst  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Financial Analyst"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Head of Support  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Head of Support"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " HR Associate  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "HR Associate"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " HR Manager  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "HR Manager"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " IT Manager  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "IT Manager"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Network Administrator  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Network Administrator"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Payroll Administrator  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Payroll Administrator"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Pre-Sales Coordinator  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Pre-Sales Coordinator"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " QA Engineer  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "QA Engineer"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " QA Lead  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "QA Lead"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " qwer hiii  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "qwer"
+      - cell "hiii"
+      - cell " ":
+        - button ""
+        - button ""
+    - row " rsjsrii dhhdhhddjdjdjjdjdj  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "rsjsrii"
+      - cell "dhhdhhddjdjdjjdjdj"
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Sales Representative  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Sales Representative"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Social Media Marketer  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Social Media Marketer"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Software Architect  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Software Architect"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Software Engineer  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Software Engineer"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " Support Specialist  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "Support Specialist"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " VP - Client Services  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "VP - Client Services"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+    - row " VP - Sales & Marketing  ":
+      - cell "":
+        - checkbox ""
+        - text: 
+      - cell "VP - Sales & Marketing"
+      - cell
+      - cell " ":
+        - button ""
+        - button ""
+- paragraph: OrangeHRM OS 5.7
+- paragraph:
+  - text: © 2005 - 2025
+  - link "OrangeHRM, Inc":
+    - /url: http://www.orangehrm.com
+  - text: . All rights reserved.
+```

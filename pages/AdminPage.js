@@ -92,4 +92,114 @@ exports.AdminPage = class AdminPage {
         console.log('The counts match!');
         } else {
         console.log(`Mismatch: Found ${itemCount} items, but records indicate ${recordsFoundCount}`);
-    }}}
+    }}
+    async checkJobTitlesRecords() {
+        await this.navigateToAdminPage();
+        await this.jobButton.click();
+        await this.jobButtonListedItem1.click(); // Job Titles
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkPayGradesRecords() {
+        await this.navigateToAdminPage();
+        await this.jobButton.click();
+        await this.jobButtonListedItem2.click(); // Pay Grades
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkEmploymentStatusRecords() {
+        await this.navigateToAdminPage();
+        await this.jobButton.click();
+        await this.jobButtonListedItem3.click(); // Employment Status
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkJobCategoriesRecords() {
+        await this.navigateToAdminPage();
+        await this.jobButton.click();
+        await this.jobButtonListedItem4.click(); // Job Categories
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkWorkShiftsRecords() {
+        await this.navigateToAdminPage();
+        await this.jobButton.click();
+        await this.jobButtonListedItem5.click(); // Work Shifts
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkSkillsRecords() {
+        await this.navigateToAdminPage();
+        await this.qualificationsButton.click();
+        await this.qualificationsButtonListedItem1.click(); // Skills
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkEducationRecords() {
+        await this.navigateToAdminPage();
+        await this.qualificationsButton.click();
+        await this.qualificationsButtonListedItem2.click(); // Education
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkLicensesRecords() {
+        await this.navigateToAdminPage();
+        await this.qualificationsButton.click();
+        await this.qualificationsButtonListedItem3.click(); // Licenses
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkLanguagesRecords() {
+        await this.navigateToAdminPage();
+        await this.qualificationsButton.click();
+        await this.qualificationsButtonListedItem4.click(); // Languages
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }
+    async checkMembershipsRecords() {
+        await this.navigateToAdminPage();
+        await this.qualificationsButton.click();
+        await this.qualificationsButtonListedItem5.click(); // Memberships
+        await this.page.waitForSelector(this.containerLocator);
+        const rowsArray = await this.page.locator(this.containerLocator).allTextContents();
+        const recordsFoundText = await this.page.getByText('Records Found').textContent();
+        const itemCount = rowsArray.length - 1;
+        const recordsFoundCount = parseInt(recordsFoundText.match(/\d+/)[0], 10);
+        return itemCount === recordsFoundCount;
+    }}
