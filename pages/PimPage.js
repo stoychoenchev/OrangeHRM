@@ -17,7 +17,6 @@ exports.PimPage = class PimPage {
         this.employeeName = page.getByPlaceholder('Type for hints...');
         this.employeeNameFilled = page.getByRole('option').first();
         this.searchButton = page.getByRole('button', { name: 'Search' });
-        this.editButton = page.locator("//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' bi-pencil-fill ')]");
     }
     async navigateToPimPage() {
         await this.pimBtn.click();
@@ -46,7 +45,10 @@ exports.PimPage = class PimPage {
         await this.page.waitForTimeout(5000);
         await this.employeeNameFilled.click();
         await this.searchButton.click();
-        await this.editButton.click();
+        // Find the row containing the employee name and click the edit button within that row
+        const row = this.page.locator('div.oxd-table-row:has-text("' + employeeName + '")');
+        const editButton = row.locator('i.oxd-icon.bi-pencil-fill');
+        await editButton.first().click();
         await this.page.getByPlaceholder('First Name').click();
         await this.page.getByPlaceholder('First Name').fill(newFirstName);
         await this.page.locator("//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' oxd-button--secondary ') and (position() = 2)]").click({ timeout: 5000});
