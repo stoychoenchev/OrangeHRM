@@ -14,7 +14,9 @@ module.exports = defineConfig({
   ],
 
   use: {
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure', // Collect trace only for failed tests
+    screenshot: 'only-on-failure', // Take screenshots only when a test fails
+    video: 'retain-on-failure',    // Record video only for failed tests
   },
 
   projects: [
