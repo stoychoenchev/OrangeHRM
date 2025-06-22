@@ -45,29 +45,6 @@ exports.HomePage = class HomePage {
         await this.profilePicture.click();
         await this.supportButton.click();
     }
-    async searchForEmployee(){
-        await this.pimButton.click();
-        await this.employeeName.first().click();
-        await this.employeeName.first().fill('A');
-        await this.page.waitForTimeout(5000);
-        await this.employeeNameFilled.click();
-        await this.searchButton.click();
-        await this.editButton.click();
-        await this.page.getByPlaceholder('First Name').click();
-        await this.page.getByPlaceholder('First Name').fill('AaaTestUpdatePlay531');
-        await this.page.locator("//*[@class and contains(concat(' ', normalize-space(@class), ' '), ' oxd-button--secondary ') and (position() = 2)]").click({ timeout: 5000});
-    }
-    async addRecruitment(){
-        await this.recruitmentButton.click();
-        await this.addInRecruitmentButton.click();
-        await this.firstNameField.fill('Stoycho');
-        await this.middleNameField.fill('Tarkanaev');
-        await this.lastNameField.fill('Tainov');
-        await this.vacancyDropDown.click();
-        await this.seniorQaOption.click();
-        await this.emailField.fill('abekvomepitash@abv.bg');
-        await this.saveButton.click();
-    }
     async postInBlog(){
         await this.buzzButton.click();
         await this.buzzTextField.fill('Testvam');
