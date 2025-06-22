@@ -140,8 +140,8 @@ test('Click Support Menu Item', async ({ page }) => {
     await expect(page.locator('#app')).toContainText('Getting Started with OrangeHRM');
 })
 test('Search for employee', async ({ page }) => {
-    const home = new HomePage(page)
-    await home.searchForEmployee();
+    const pim = new PimPage(page)
+    await pim.searchForEmployee();
     await expect(page.getByText('Successfully Updated')).toBeVisible({ timeout: 10000});
 })
 
